@@ -1,0 +1,275 @@
+/* Global */
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-green: hsl(148, 38%, 91%);
+    --green: rgb(12, 125, 105);
+    --red: hsl(0, 66%, 56%);
+
+    --white: hsl(0, 0%, 100%);
+    --medium-grey: hsl(186, 15%, 59%);
+    --dark-grey: hsl(187, 24%, 22%);
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background: var(--light-green);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+/* /Global */
+
+main {
+    background: var(--white);
+    padding: 1rem;
+    margin: 2rem 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+h1 {
+    color: var(--dark-grey);
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-block {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.form-block > label,
+.form-block > legend {
+    color: var(--dark-grey);
+    font-weight: 700;
+}
+
+.form-block span {
+    color: var(--medium-grey);
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.block-input {
+    border: 1px solid var(--medium-grey);
+    border-radius: .5rem;
+    height: 2rem;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.block-input > label {
+    color: var(--dark-grey);
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+.form-textarea {
+    resize: none;
+    border-radius: .5rem;
+    border: 1px solid var(--medium-grey);
+    padding: .25rem 0 0 .5rem;
+}
+
+.form-input {
+    height: 2rem;
+    border-radius: .5rem;
+    border: 1px solid var(--medium-grey);
+    padding: 0 0 0 .5rem;
+}
+
+.form-input:hover,
+.form-textarea:hover {
+    border: 1px solid var(--green);
+}
+
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+    outline: 1px solid var(--green);
+}
+
+.d-flex-radio {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Radio check */
+.block-input-selected {
+    border: 1px solid var(--green);
+    background: rgba(12, 125, 105, .15);
+}
+
+.radio-input:checked + label:before {
+    content: "";
+	width: 1rem;
+	height: 1rem;
+	background: url(../images/icon-radio-selected.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.radio-input:checked {
+    display: none;
+}
+/* Radio check */
+
+/* Checkbox check */
+.form-block > .d-flex {
+    flex-direction: row;
+}
+
+.checkbox-input:checked {
+    display: none;
+}
+
+.checkbox-input + label {
+    display: flex;
+    gap: 1rem;
+}
+
+.checkbox-input:checked + label:before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    float: left;
+    background: url(../images/icon-checkbox-check.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* /Checkbox check */
+
+button {
+    height: 2.5rem;
+    background: var(--green);
+    border: none;
+    border-radius: .5rem;
+    font-family: 'Karla', sans-serif;
+    color: var(--white);
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+button:hover {
+    background-color: rgb(3, 87, 72);
+}
+
+.form-block > p {
+    color: var(--red);
+}
+/* /Form */
+
+/* Success message */
+.message {
+    background: rgb(3, 87, 72);
+    padding: 0;
+    border-radius: .5rem;
+    color: var(--white);
+    height: 0;
+    overflow: hidden;
+    max-width: 500px;
+    margin: 0 auto;
+
+    position: fixed;
+    top: 2%;
+    left: 2%;
+    right: 2%;
+
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    transition: height .5s ease-out;
+}
+
+.message-show {
+    height: 6rem;
+    padding: 1rem;
+}
+
+.message-title {
+    display: flex;
+    gap: .5rem;
+}
+
+.message-text {
+    color: var(--medium-grey);
+    font-weight: 700;
+}
+/* Success message */
+
+/* Error form */
+.error-input {
+    border: 1px solid var(--red) !important;
+}
+
+.form-valid {
+    opacity: 0;
+    cursor: default;
+}
+
+.show {
+    opacity: 1 !important;
+}
+
+/* Desktop media query */
+@media(min-width: 769px){
+    main {
+        min-width: 500px;
+        padding: 2rem;
+    }
+
+    .d-flex,
+    .d-flex-radio {
+        flex-direction: row;
+    }
+
+    .d-flex > .form-block,
+    .d-flex-radio > .block-input {
+        width: 100%;
+    }
+
+    .message-show {
+        height: 5rem;
+    }
+}
+/* /Desktop media query */
+
+/* Footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+/* /Footer */

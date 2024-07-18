@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Frontend Mentor | Contact form</title>
+</head>
+
+<body>
+  <main>
+    <h1>Contact Us</h1>
+    <!-- Form -->
+    <form @submit="handleSubmit">
+      <div class="d-flex">
+        <!-- First name -->
+        <div class="form-block">
+          <label for="name">First Name <span>*</span></label>
+          <input type="text" id="name" ref="name" :class="nameValid ? 'form-input error-input' : 'form-input'">
+          <p :class="nameValid ? 'form-valid show' : 'form-valid'">This field is required</p>
+        </div>
+
+        <!-- Last name -->
+        <div class="form-block">
+          <label for="lastName">Last Name <span>*</span></label>
+          <input type="text" id="lastName" ref="lastName" :class="lastNameValid ? 'form-input error-input' : 'form-input'">
+          <p :class="lastNameValid ? 'form-valid show' : 'form-valid'">This field is required</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-block">
+        <label for="email">Email Adress <span>*</span></label>
+        <input type="email" id="email" ref="email" :class="emailValid ? 'form-input error-input' : 'form-input'">
+        <p :class="emailValid ? 'form-valid show' : 'form-valid'">Please enter a valid email adress</p>
+      </div>
+
+      <!-- Query type -->
+      <div class="form-block">
+        <legend>Query Type <span>*</span></legend>
+        <div class="d-flex-radio">
+          <div :class="generalChecked ? 'block-input block-input-selected' : 'block-input'">
+            <input type="radio" name="query" id="general" ref="general" class="radio-input" @click="handleCheck">
+            <label for="general">General Enquiry</label>
+          </div>
+          <div :class="supportChecked ? 'block-input block-input-selected' : 'block-input'">
+            <input type="radio" name="query" id="support" ref="support" class="radio-input" @click="handleCheck">
+            <label for="support">Support Request</label>
+          </div>
+        </div>
+        <p :class="queryValid ? 'form-valid show' : 'form-valid'">Please select a query type</p>
+      </div>
+
+      <!-- Message -->
+      <div class="form-block">
+        <label for="msg">Message <span>*</span></label>
+        <textarea id="msg" cols="20" rows="5" ref="msg" :class="msgValid ? 'form-textarea error-input' : 'form-textarea'"></textarea>
+        <p :class="msgValid ? 'form-valid show' : 'form-valid'">This field is required</p>
+      </div>
+
+      <!-- Checkbox -->
+      <div class="form-block">
+        <div class="d-flex">
+          <input type="checkbox" name="check" id="check" ref="check" class="checkbox-input">
+          <label for="check">I consent to being contacted by the team. <span>*</span></label>
+        </div>
+        <p :class="checkValid ? 'form-valid show' : 'form-valid'">To submit this form, please consent to being contacted</p>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+    <!-- /Form -->
+
+    <!-- Success message -->
+    <div :class="success ? 'message message-show' : 'message'">
+      <div class="message-title">
+        <img src="../assets/images/icon-success-check.svg" alt="success check" draggable="false">
+        <h3>Message Sent!</h3>
+      </div>
+      <div class="message-text">
+        <p>Thanks for completing the form. We'ill be touch soon!</p>
+      </div>
+    </div>
+    <!-- Success message -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="attribution">
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+  <!-- /footer -->
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="assets/js/index.js"></script>
+</body>
+
+</html>
