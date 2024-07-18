@@ -58,7 +58,12 @@ form {
 .form-block > label,
 .form-block > legend {
     color: var(--dark-grey);
-    font-weight: 700;
+    font-weight: 400;
+}
+
+.form-block-title {
+    color: var(--dark-grey) !important;
+    font-weight: 400;
 }
 
 .form-block span {

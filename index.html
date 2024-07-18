@@ -39,7 +39,7 @@
 
       <!-- Query type -->
       <div class="form-block">
-        <legend>Query Type <span>*</span></legend>
+        <p class="form-block-title">Query Type <span>*</span></p>
         <div class="d-flex-radio">
           <div :class="generalChecked ? 'block-input block-input-selected' : 'block-input'">
             <input type="radio" name="query" id="general" ref="general" class="radio-input" @click="handleCheck">
@@ -77,7 +77,7 @@
     <div :class="success ? 'message message-show' : 'message'">
       <div class="message-title">
         <img src="../assets/images/icon-success-check.svg" alt="success check" draggable="false">
-        <h3>Message Sent!</h3>
+        <h2>Message Sent!</h2>
       </div>
       <div class="message-text">
         <p>Thanks for completing the form. We'ill be touch soon!</p>
