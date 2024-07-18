@@ -15,12 +15,13 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./assets/images/desktop.png)
+![](./assets/images/mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://arielnicolas2021.github.io/contact-form-main)
+- Solution URL: [Click me!](https://your-solution-url.com)
+- Live Site URL: [Click me!](https://arielnicolas2021.github.io/contact-form-main)
 
 ## My process
 
